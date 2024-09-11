@@ -1,0 +1,21 @@
+{
+  "name": "task-management-system",
+  "version": "1.0.0",
+  "description": "The project involves developing a basic Task Management System (TMS) that allows users to create, manage, and track their tasks. The project will be structured to allow a complete development cycle, from database design and implementation to backend and frontend development, ensuring all components work together seamlessly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.20.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
