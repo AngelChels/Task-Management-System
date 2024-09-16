@@ -1,26 +1,23 @@
 const sql = require('mssql');
-require('dotenv').config();
 
-const config = {
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    server: process.env.DB_SERVER,
-    database: process.env.DB_DATABASE,
+const sqlConfig = {
+    user:     'Username',                                                           //process.env.DB_USER,
+    password: 'Pa$$w0rd',                                                           //process.env.DB_PASSWORD,
+    server:   'addie-azuredb.database.windows.net',                                 //process.env.DB_SERVER,
+    database: 'TmsDatabase',                                                                      //process.env.DB_DATABASE,
     options: {
         encrypt: true,
         trustServerCertificate: true,
     },
 };
 
-const poolPromise = new sql.ConnectionPool(config)
-    .connect()
-    .then(pool => {
-        console.log('Connected to SQL Server');
-        return pool;
-    })
-    .catch(err => console.log('Database connection failed', err));
-
-module.exports = {
-    sql,
-    poolPromise
-};
+(async () => {
+    try {
+     // make sure that any items are correctly URL encoded in the connection string
+     await sql.connect(sqlConfig);
+     const result = await sql.query `select * from Tasks`;
+     console.dir(result);
+    } catch (err) {
+        console.error(err);
+    }
+   })();
