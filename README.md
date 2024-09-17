@@ -5,5 +5,5 @@ The project involves developing a basic Task Management System (TMS) that allows
 1. Rename .env_sample to .env
 2. Replace the values for DB_USER, DB_PASSWORD, DB_SERVER and DB_DATABASE with your server and database credentials.
 3. To set up a free database in Microsoft azure:
-    * Create an account
+    * Create an account on azure
     * Follow this tutorial:                -----Link-----
